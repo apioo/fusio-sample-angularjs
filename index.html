@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+  <meta charset="utf-8">
+  <title>Todo-App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dist/todo.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto" type="text/css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Inconsolata" type="text/css">
+  <script type="text/javascript">
+  var fusio_url = 'http://demo.fusio-project.org/';
+  </script>
+  <script src="dist/todo.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <oauth
+            site="http://demo.fusio-project.org/developer"
+            client-id="b5d5888e-abce-465f-833a-a400b6ad9df0"
+            redirect-uri="http://demo.fusio-project.org/app/"
+            profile-uri="http://demo.fusio-project.org/authorization/whoami"
+            authorize-path="/auth"
+            scope="todo,authorization"
+            template="partials/oauth-buttons.html">
+        </oauth>
+    </div>
+    <div ng-view class="content"></div>
+</div>
+
+</body>
+</html>
