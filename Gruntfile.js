@@ -44,7 +44,7 @@ module.exports = function(grunt){
     },
     ngtemplates: {
       todoApp: {
-        src: 'app/*.html',
+        src: 'app/*/*.html',
         dest: 'dist/todo-templates.min.js',
         options: {
           htmlmin: {
