@@ -1,0 +1,29 @@
+
+<div uib-alert ng-class="'alert-danger'" close="closeResponse()" ng-if="response.success === false">
+  {{response.message}}
+</div>
+
+<div class="todo">
+  <ul>
+    <li ng-repeat="todo in todos">
+      <input ng-if="isAuthenticated" type="button" class="btn btn-danger todo-delete" ng-click="removeTodo(todo)" value="×"/>
+      <div class="todo-title">{{ todo.title }}</div>
+      <span class="todo-meta">{{ todo.insertDate }}</span>
+    </li>
+  </ul>
+
+  <hr>
+
+  <div ng-if="isAuthenticated">
+    <form class="form-inline">
+      <textarea class="todo-title-form" ng-model="todo.title"></textarea>
+      <input type="button" class="btn btn-primary" ng-click="insertTodo()" value="Insert" />
+    </form>
+  </div>
+
+  <div ng-if="!isAuthenticated">
+    <p>You are not authenticated. In order to post an entry please login or register a new account.</p>
+    <a ng-href="#!/login" class="btn btn-primary">Login</a>
+    <a ng-href="#!/register" class="btn btn-default">Register</a>
+  </div>
+</div>

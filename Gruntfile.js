@@ -11,11 +11,15 @@ module.exports = function(grunt){
       },
       dist: {
         src: [
-          './bower_components/angular/angular.min.js',
-          './bower_components/angular-route/angular-route.min.js',
-          './bower_components/ngstorage/ngStorage.min.js',
-          './bower_components/oauth-ng/dist/oauth-ng.js',
-          './js/app.js',
+          './node_modules/angular/angular.min.js',
+          './node_modules/angular-route/angular-route.min.js',
+          './node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js',
+          './node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+          './node_modules/angular-no-captcha/build/angular-no-captcha.min.js',
+          './node_modules/satellizer/dist/satellizer.min.js',
+          './app/auth/auth.js',
+          './app/todo/todo.js',
+          './app/app.js',
           './dist/todo-templates.min.js'
         ],
         dest: './dist/todo.min.js'
@@ -30,8 +34,9 @@ module.exports = function(grunt){
       dist: {
         files: {
           './dist/todo.min.css': [
-            './bower_components/bootstrap/dist/css/bootstrap.css', 
-            './bower_components/bootstrap/dist/css/bootstrap-theme.css', 
+            './node_modules/bootstrap/dist/css/bootstrap.css', 
+            './node_modules/bootstrap/dist/css/bootstrap-theme.css', 
+            './node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css', 
             './css/app.css'
           ]
         }
@@ -39,7 +44,7 @@ module.exports = function(grunt){
     },
     ngtemplates: {
       todoApp: {
-        src: 'partials/*.html',
+        src: 'app/*.html',
         dest: 'dist/todo-templates.min.js',
         options: {
           htmlmin: {

@@ -4,7 +4,10 @@
   <meta charset="utf-8">
   <title>Todo-App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="dist/todo.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
+  <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto" type="text/css">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Inconsolata" type="text/css">
   <script type="text/javascript">
@@ -13,7 +16,15 @@
      */
     var fusio_url = 'http://demo.fusio-project.org/';
   </script>
-  <script src="dist/todo.min.js"></script>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/angular-route/angular-route.min.js"></script>
+  <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+  <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+  <script src="node_modules/angular-no-captcha/build/angular-no-captcha.min.js"></script>
+  <script src="node_modules/satellizer/dist/satellizer.min.js"></script>
+  <script src="app/auth/auth.js"></script>
+  <script src="app/todo/todo.js"></script>
+  <script src="app/app.js"></script>
   <script type="text/javascript">
     /**
      * Optional you can configure additional login provider which can be used
@@ -48,7 +59,7 @@
         <li><a ng-href="#!/login">Login</a></li>
         <li><a ng-href="#!/register">Register</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right" ng-if="userName">
+      <ul class="nav navbar-nav navbar-right" ng-if="isAuthenticated">
         <li><p class="navbar-text">Signed in as {{userName}}</p></li>
         <li><a ng-href="#!/logout">Logout</a></li>
       </ul>
