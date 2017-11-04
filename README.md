@@ -7,9 +7,6 @@ This is a simple Todo-App written in AngularJS which uses an API provided by
 Fusio. This is a great example how to use Fusio as backend for a single page
 application. More information about Fusio at http://fusio-project.org
 
-A online demo is also available at:
-http://demo.fusio-project.org/app
-
 # Build
 
 To build the app you have to execute the following commands:
